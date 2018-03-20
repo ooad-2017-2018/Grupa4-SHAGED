@@ -1,3 +1,16 @@
+### **Naziv tima:** 
+SHAGED
+
+### **Članovi tima:** 
+Đumišić Sanida      
+Horozić Asja      
+Galijatović Esma 
+
+### **Naziv teme:** 
+Turisticka agencija SEA
+
+![alt text](http://im.hunt.in/cg/silvassa/City-Guide/Travel-Agency.jpg)
+
 # **OPIS TEME**  
 Potrebno je kreirati aplikaciju za prikaz ponuda i rezervaciju putovanja turisticke agencije. Svrha sistema je omoguciti laksi
 nacin pregleda i odabira putovanja. Obzirom na nedostatak vremena, aplikacija omogucava korisnicima, da bez obilazenja turisticke 
