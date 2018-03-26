@@ -50,7 +50,7 @@ tacnost podataka i u slucaju greske izvjestava i zahtijeva ponovni unos.
 - mogucnost pregleda mape trenutno mogucih odredista
 - mogucnost pregleda ponuda uz odredjena filtriranja
 - mogucnost pregleda generalnih i kontakt informacija o turistickoj agenciji
-- mogucnost informisanja o 3, do datog trenutka, najtrazenije ponude
+- mogucnost informisanja o 3 najtrazenije ponude do datog trenutka
 
 # **AKTERI** 
 ## **Korisnik**
