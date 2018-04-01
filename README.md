@@ -34,7 +34,7 @@ buducih ponuda.
 ## **Pregled gradova u ponudi na mapi**
 Korisnik ima opciju da na mapi pregleda lokacije gradova u trenutnoj ponudi.
 
-## **Registracija administratora**
+## **Prijava administratora**
 Administrator ima poseban account, pomocu kojeg moze pristupiti podacima o putnicima, pregledati popunjenost ponuda, unositi nove 
 ponude, azurirati trenutne i brisati stare. Prijavljuje se tako sto unosi svoje korisnicko ime i lozinku, pri cemu sistem provjerava 
 tacnost podataka i u slucaju greske izvjestava i zahtijeva ponovni unos.
