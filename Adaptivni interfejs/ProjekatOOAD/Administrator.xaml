@@ -1,0 +1,189 @@
+﻿<Page
+    x:Class="ProjekatOOAD.Administrator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatOOAD"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStatePhone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LimePonude.Margin" Value="16,17,0,0" />
+                        <Setter Target="Lslika.Margin" Value="16,67,0,0" />
+                        <Setter Target="TimePonude.Margin" Value="88,14,0,0" />
+                        <Setter Target="slika.Margin" Value="88,64,0,0" />
+                        <Setter Target="slika.Height" Value="100"/>
+                        <Setter Target="slika.Width" Value="100"/>
+
+                        <Setter Target="LopisPonude.Margin" Value="16,197,0,0" />
+                        <Setter Target="TopisPonude.Margin" Value="88,194,0,0" />
+                        <Setter Target="LlinkHotela.Margin" Value="16,257,0,0" />
+                        <Setter Target="TlinkHoela.Margin" Value="88,254,0,0" />
+                        <Setter Target="LlinkKamera.Margin" Value="16,297,0,0" />
+                        <Setter Target="TlinkKamera.Margin" Value="88,294,0,0" />
+                        <Setter Target="LvremenskaProg.Margin" Value="16,337,0,0" />
+                        <Setter Target="TvremenskaProg.Margin" Value="88,334,0,0" />
+                        <Setter Target="Lznamenitosti.Margin" Value="16,377,0,0" />
+                        <Setter Target="Tznamenitosti.Margin" Value="88,374,0,0" />
+                        <Setter Target="dNazadDodaj.Margin" Value="60,485,0,0" />
+                        <Setter Target="dDodaj.Margin" Value="60,432,0,0" />
+                        <Setter Target="dUcitajSliku.Margin" Value="200,114,0,0" />
+                        <Setter Target="dNazadObrisi.Margin" Value="60,164,0,0" />
+                        <Setter Target="dObrisi.Margin" Value="60,114,0,0" />
+                        <Setter Target="comboPonudeObrisi.Margin" Value="88,14,0,0" />
+                        <Setter Target="LodaberiPonuduObrisi.Margin" Value="16,17,0,0" />
+                        
+                        <Setter Target="LimePonude1.Margin" Value="16,67,0,0" />
+                        <Setter Target="Lslika1.Margin" Value="16,117,0,0" />
+                        <Setter Target="TimePonude1.Margin" Value="88,64,0,0" />
+                        <Setter Target="slika1.Margin" Value="88,114,0,0" />
+                        <Setter Target="slika1.Height" Value="100"/>
+                        <Setter Target="slika1.Width" Value="100"/>
+                        <Setter Target="Lopis1.Margin" Value="16,247,0,0" />
+                        <Setter Target="Topis1.Margin" Value="88,244,0,0" />
+                        <Setter Target="LlinkHotela1.Margin" Value="16,307,0,0" />
+                        <Setter Target="TlinkHotela1.Margin" Value="88,304,0,0" />
+                        <Setter Target="LlinkKamera1.Margin" Value="17,347,0,0" />
+                        <Setter Target="TlinkKamera1.Margin" Value="88,344,0,0" />
+                        <Setter Target="LvremenskaProg1.Margin" Value="16,377,0,0" />
+                        <Setter Target="TvremenskaProg1.Margin" Value="88,374,0,0" />
+                        <Setter Target="Lznamenitosti1.Margin" Value="16,417,0,0" />
+                        <Setter Target="Tznamenitosti1.Margin" Value="88,414,0,0" />
+                        <Setter Target="dNazadAzuriraj.Margin" Value="180,483,0,0" />
+                        <Setter Target="dAzuriraj.Margin" Value="60,483,0,0" />
+                        <Setter Target="dAzuriraj.Height" Value="38"/>
+                        <Setter Target="dAzuriraj.Width" Value="104"/>
+                        <Setter Target="dNazadAzuriraj.Height" Value="38"/>
+                        <Setter Target="dNazadAzuriraj.Width" Value="104"/>
+                        <Setter Target="dUcitajSlikuAzuriraj.Margin" Value="200,164,0,0" />
+                        <Setter Target="comboPonudeAzuriraj.Margin" Value="88,14,0,0" />
+                        <Setter Target="LodaberiPonuduAzuriraj.Margin" Value="16,17,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="VisualStateDesktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LimePonude.Margin" Value="5,8,0,0" />
+                        <Setter Target="Lslika.Margin" Value="5,56,0,0" />
+                        <Setter Target="TimePonude.Margin" Value="225,5,0,0" />
+                        <Setter Target="slika.Margin" Value="225,53,0,0" />
+                        <Setter Target="LopisPonude.Margin" Value="5,180,0,0" />
+                        <Setter Target="TopisPonude.Margin" Value="225,177,0,0" />
+                        <Setter Target="LlinkHotela.Margin" Value="5,287,0,0" />
+                        <Setter Target="TlinkHoela.Margin" Value="225,284,0,0" />
+                        <Setter Target="LlinkKamera.Margin" Value="5,347,0,0" />
+                        <Setter Target="TlinkKamera.Margin" Value="225,344,0,0" />
+                        <Setter Target="LvremenskaProg.Margin" Value="5,407,0,0" />
+                        <Setter Target="TvremenskaProg.Margin" Value="225,404,0,0" />
+                        <Setter Target="Lznamenitosti.Margin" Value="5,467,0,0" />
+                        <Setter Target="Tznamenitosti.Margin" Value="225,464,0,0" />
+                        <Setter Target="dNazadDodaj.Margin" Value="500,444,0,0" />
+                        <Setter Target="dDodaj.Margin" Value="500,384,0,0" />
+                        <Setter Target="dUcitajSliku.Margin" Value="500,120,0,0" />
+                        <Setter Target="dNazadObrisi.Margin" Value="5,150,0,0" />
+                        <Setter Target="dObrisi.Margin" Value="305,150,0,0" />
+                        <Setter Target="comboPonudeObrisi.Margin" Value="225,33,0,0" />
+                        <Setter Target="LodaberiPonuduObrisi.Margin" Value="5,36,0,0" />
+                        <Setter Target="comboPonudeAzuriraj.Margin" Value="225,30,0,0" />
+                        <Setter Target="LodaberiPonuduAzuriraj.Margin" Value="5,33,0,0" />
+
+
+                        <Setter Target="LimePonude1.Margin" Value="5,88,0,0" />
+                        <Setter Target="Lslika1.Margin" Value="5,136,0,0" />
+                        <Setter Target="TimePonude1.Margin" Value="225,85,0,0" />
+                        <Setter Target="slika1.Margin" Value="225,133,0,0" />
+                        <Setter Target="Lopis1.Margin" Value="5,260,0,0" />
+                        <Setter Target="Topis1.Margin" Value="225,257,0,0" />
+                        <Setter Target="LlinkHotela1.Margin" Value="5,362,0,0" />
+                        <Setter Target="TlinkHotela1.Margin" Value="225,359,0,0" />
+                        <Setter Target="LlinkKamera1.Margin" Value="5,397,0,0" />
+                        <Setter Target="TlinkKamera1.Margin" Value="225,394,0,0" />
+                        <Setter Target="LvremenskaProg1.Margin" Value="5,434,0,0" />
+                        <Setter Target="TvremenskaProg1.Margin" Value="225,431,0,0" />
+                        <Setter Target="Lznamenitosti1.Margin" Value="5,477,0,0" />
+                        <Setter Target="Tznamenitosti1.Margin" Value="225,469,0,0" />
+                        <Setter Target="dNazadAzuriraj.Margin" Value="500,434,0,0" />
+                        <Setter Target="dAzuriraj.Margin" Value="500,374,0,0" />
+                        <Setter Target="dUcitajSlikuAzuriraj.Margin" Value="500,120,0,0" />
+
+
+
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Pivot Title="Administracija">
+            <PivotItem Name="DodajPonude" Header="Dodaj ponude">
+                <Grid>
+                    <TextBlock Name="LimePonude" HorizontalAlignment="Left"  Text="Ime ponude:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBlock Name="Lslika" HorizontalAlignment="Left"  Text="Slika:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TimePonude" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="188"/>
+                    <Image Name="slika"  HorizontalAlignment="Left" Height="113"  VerticalAlignment="Top" Width="187"/>
+                    <TextBlock Name="LopisPonude" HorizontalAlignment="Left"  Text="Opis ponude:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TopisPonude" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="188" Height="93" Margin="225,247,0,0"/>
+                    <TextBlock Name="LlinkHotela" HorizontalAlignment="Left"  Text="Link hotela:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TlinkHoela" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="188"/>
+                    <TextBlock Name="LlinkKamera" HorizontalAlignment="Left"  Text="Link kamere:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TlinkKamera" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="188"/>
+                    <TextBlock Name="LvremenskaProg" HorizontalAlignment="Left"  Text="Link vremenske prognoze:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TvremenskaProg" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="188"/>
+                    <TextBlock Name="Lznamenitosti" HorizontalAlignment="Left" Text="Link za znamenitosti:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="Tznamenitosti" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="188"/>
+                    <Button Name="dNazadDodaj" Content="NAZAD" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="42" Width="211"/>
+                    <Button Name="dDodaj" Content="DODAJ PONUDU" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="42" Width="211"/>
+                    <Button Name="dUcitajSliku" Content="UCITAJ SLIKU" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="34" Width="120"/>
+
+                </Grid>
+            </PivotItem>
+            <PivotItem Name="ObrisiPonude" Header="Obrisi ponude">
+                <Grid>
+                    <Button Name="dNazadObrisi" Content="NAZAD" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="42" Width="150"/>
+                    <Button Name="dObrisi" Content="OBRISI PONUDU" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="42" Width="150"/>
+                    <ComboBox Name="comboPonudeObrisi" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="36" Width="188">
+                        <ComboBox/>
+                    </ComboBox>
+                    <TextBlock Name="LodaberiPonuduObrisi" HorizontalAlignment="Left"  Text="Odaberite ponudu:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+                </Grid>
+            </PivotItem>
+            <PivotItem Name="AzurirajPonude" Header="Azuriraj ponude">
+                <Grid>
+                    <TextBlock Name="LimePonude1"  HorizontalAlignment="Left" Text="Ime ponude:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBlock Name="Lslika1" HorizontalAlignment="Left" Text="Slika:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TimePonude1" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="188"/>
+                    <Image Name="slika1" HorizontalAlignment="Left" Height="147"  VerticalAlignment="Top" Width="188"/>
+                    <TextBlock Name="Lopis1" HorizontalAlignment="Left" Text="Opis ponude:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="Topis1" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="188" Height="80"/>
+                    <TextBlock Name="LlinkHotela1" HorizontalAlignment="Left"  Text="Link hotela:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TlinkHotela1" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="188"/>
+                    <TextBlock Name="LlinkKamera1" HorizontalAlignment="Left" Text="Link kamere:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TlinkKamera1" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="188"/>
+                    <TextBlock Name="LvremenskaProg1" HorizontalAlignment="Left"  Text="Link vremenske prognoze:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="TvremenskaProg1" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="188"/>
+                    <TextBlock Name="Lznamenitosti1" HorizontalAlignment="Left"  Text="Link za znamenitosti:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox Name="Tznamenitosti1" HorizontalAlignment="Left"  Text="" VerticalAlignment="Top" Width="188"/>
+                    <Button Name="dNazadAzuriraj" Content="NAZAD" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="42" Width="150"/>
+                    <Button Name="dAzuriraj" Content="AZURIRAJ" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="42" Width="150"/>
+                    <Button Name="dUcitajSlikuAzuriraj" Content="UCITAJ SLIKU" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="34" Width="159"/>
+                    <ComboBox Name="comboPonudeAzuriraj" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="188">
+                        <ComboBox/>
+                    </ComboBox>
+                    <TextBlock Name="LodaberiPonuduAzuriraj" HorizontalAlignment="Left" Text="Odaberite ponudu:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+                </Grid>
+            </PivotItem>
+        </Pivot>
+
+    </Grid>
+</Page>
