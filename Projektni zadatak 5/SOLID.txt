@@ -1,0 +1,26 @@
+SOLID PRINCIPI:
+1. Pojedinacne odogovornosti
+Klasa Agencija brine i o statistici agencije i o vlastitim metodama
+kao sto su dodavanje novih elemenata u liste i slicno.
+Potrebno je odvojiti interfejs za statistiku o putovanjima, te interfejs
+za statistiku o putnicima. U slucaju konektovanja na bazu podataka
+potrebno je odvojiti klasu koja se bavi konektovanjem na bazu i 
+takodjer za sve vidove spasavanja instanci klase (npr. xml)
+
+2. Otvorenost/ Zatvorenost
+Ovaj princip je ispostovan iz razloga sto je moguce dodati nove vrste korisnika, 
+administratora, putovanja itd.
+Takodjer klase imaju privatne atribute te je sistem zatvoren za modifikacije.
+
+3. Liskov princip zamjene
+Obzirom da se sve klase naslijedjene iz osobe mogu zamijeniti osobom, ovaj princip
+je u potpunosti ispostovan. 
+
+4. Odvajanje interfejsa
+Ovaj princip nije ispostovan jer nema nijednog interfejsa.
+Nema uvida u metode nijedne klase te je to potrebno promijeniti.
+
+5. Inverzija zavisnosti
+Obzirom da jedina generalizacija u nasem dijagramu klasa jeste naslijedjivanje
+korisnika, administratora i vodica iz klase Osoba, a klasa Osoba ne zavisi od 
+detalja u naslijedjenim klasama, ovaj princip je ispostovan.
