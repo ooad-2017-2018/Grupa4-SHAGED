@@ -1,0 +1,75 @@
+Facade Patern
+Facade patern spada u strukturne paterne. Koristimo ga u slučaju da imamo vise podsistema. Omogućava nam da imamo više pogleda visokog nivoa (implementacija podsitema je skrivena od korinika).
+
+Struktura Facade Paterna
+Facade klasa koja definira i implementira jedinstveni interfejs za skup operacija nekog podsitema
+SubSystemClassN klasa definira interfejs u sklopu interfejsa nekog sistema
+
+Factory Method Patern
+Factory Method patern spada u kreacijske paterne. On omogućava kreiranje objekata na način da podklase odluče koju klasu treba instancirati.
+
+Struktura Factory Method
+IProduct definira interfejs za produkte
+ProductX klasa koja implementira interfejs IProduct
+Creator klasa posjeduje FactoryMethod() metodu koja odlucuje koju klasu instacirati
+
+Observer Patern
+Spada u paterne ponašanja. Ospostavlja relaciju između objekata tako kada jedan objekat promijeni stanje, drugi zainteresovani objekti se obavještavaju.
+Strukura Observer Paterna
+Subject klasa - instance ove klase neovisno mijenjaju svoje stanje i obavještavaju posmatrače(Observer)
+IObserver - interfejs koji sadrži samo jednu metodu oja se poziva kada se promijeni stanje Subject instance
+Observer - implementria IObserer interfejs
+Update - formira interfejs između Subject i Observer
+Notify - event mehanizam za povezivanje Update operacije za sve posmatrače
+
+
+Adapter Patern
+Osnovna funkcija Adapter paterna je omogućavanje šire upotrebe već postojećih klasa. Ukoliko ne želimo mijenjati već postojeću klasu, ali nam je iz nekog razloga potreban drugačiji interface, koristi se ovaj patern. Adapter klasa služi kao posrednik između orginalne klase i interface-a. Na ovaj način ne narušavamo integritet aplikacije.
+
+Struktura Adapter Paterna
+Client klasa-klasa koja preko ITarget interface-a surađuje sa drugim klasama
+ITarget-definira domen specifični interfejs koji klijent zahtjeva
+Adapter-implementira taj novi interface tj. prilagođava već postojeći interface
+Adaptee-definira postojeći interface koji će se prilagoditi
+
+
+Strategy Patern
+Strategy patern izdvaja algoritam iz matične klase i uključuje ga u posebne klase. Pogodan je kada postoje različiti primjenjivi algoritmi (strategije) za neki problem.
+
+Struktura Strategy Paterna
+Context- Klasa preko koje Client klasa daje kontekstualne informacije za IStrategy algoritme.
+Istrategy-definira zajednički interfejs za sve algoritme (strategije).
+StrategyA, StrategyB – Klase koje implementiraju algoritme (konkretne strategije) tj. IStrategy interfejs.
+
+State Patern
+State Pattern je dinamička verzija Strategy paterna. Objekat mijenja način ponašanja na osnovu trenutnog stanja. Postiže se promjenom podklase unutar hijerarhije klasa.
+
+Struktura State Paterna
+Context- definira tekući kontekst i interface koji je u interesu klijenta i održava instancu stanja
+IState: Interface(apstraktna klasa) koja definiše ponašanje svih mogućih stanja klijenta
+StateA, StateB: Implementiraju konkretno stanje objekta. Svako stanje je predstavljeno jednom konkretnom klasom.
+
+Decorator Patern
+Spada u strukturalne paterne. Osnovna namjena Decorator paterna je da omogući dinamičko dodavanje novih elemenata i ponašanja postojećim objektima.
+
+Struktura Decorator Paterna
+Component – Originalna klasa koja sadrži interfejs koji se može mijenjati ili mu se mogu dinamički dodati operacije
+IComponent – interfejs koji identificira klase objekata koji trebaju biti dekorisani
+Decorator – klasa koja odgovara IComponent interfejsu i implementira dinamički prošireni interfejs
+
+Composite Patern
+Spada u strukturalne paterne. Osnovna namjena Composite paterna je da omogući formiranje strukture stabla pomoću klasa, u kojoj se individualni objekti (listovi stabla) i kompozicije individualnih objekata (korijeni stabla) jednako tretiraju.
+
+Struktura Composite Paterna
+Client – manipulira objektima u kompoziciji preko IComponent interfejsa
+IComponent – definira interfejs-operacije za objekte u kompoziciji i implementira defaultno ponašanje koje je zajedničko za objekte oba tipa
+Component – implementira interfejs klase za osnovne objekte
+Composite – implementira interfejs koji je primjenjiv na kompozitne objekte, korištenjem implementacije za pojedinačne komponente
+
+Prototype patern
+Spada u kreacijske paterne. Uloga Prototype paterna je da kreira nove objekte klonirajući jednu od postojećih prototip instanci. Ako je trošak kreiranja novog objekta velik i kreiranje objekta je resursno zahtjevno tada se vrši kloniranje već postojećeg objekata.
+
+Struktura Prototype Paterna
+Client klasa -zahtjeva kloniraje postojećeg objekta preko interfejsa IPrototype
+IPrototype - interfejs kojim se omogućava kloniranje postojećih konkretnih objekata
+Prototype1, Prototype2,…(konkretni prototipi) - klase koje implementiraju kloniranje postojećih objekata
