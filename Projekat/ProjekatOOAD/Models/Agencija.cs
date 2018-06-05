@@ -19,6 +19,7 @@ namespace ProjekatOOAD.Models
         private List<OpisPutovanja> ponude;
         private List<Korisnik> putnici;
         private List<Vodic> vodici;
+        private static int singleton = 0;
 
         internal List<Administrator> Administratori { get => administratori; set => administratori = value; }
         public string Opis { get => opis; set => opis = value; }
@@ -31,8 +32,13 @@ namespace ProjekatOOAD.Models
         internal List<Vodic> Vodici { get => vodici; set => vodici = value; }
 
         public Agencija() {
+            singleton++;
+            if (singleton > 1)
+            {
+                throw new Exception("Samo jedna instanca ove klase moze biti napravljena");
+            }
             administratori = new List<Administrator>();
-            administratori.Add(new Administrator("esma", DateTime.Now, "", 0, "esma", "esma"));
+            //administratori.Add(new Administrator("esma", DateTime.Now, "", 0, "esma", "esma"));
             putnici = new List<Korisnik>();
             putovanja = new List<Putovanje>();
             ponude = new List<OpisPutovanja>();

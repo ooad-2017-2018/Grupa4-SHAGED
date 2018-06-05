@@ -26,8 +26,8 @@ namespace ProjekatOOAD
     {
         public MainPage()
         {
-            this.InitializeComponent();
             DataContext = new AdministratorViewModel();
+            this.InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 

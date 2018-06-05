@@ -76,7 +76,6 @@ namespace ProjekatOOAD.ViewModels
         IMobileServiceTable<DataBaseAdministrator> administratorTabela = App.MobileService.GetTable<DataBaseAdministrator>();
         IMobileServiceTable<DataBasePonuda> opisPutovanjaTabela = App.MobileService.GetTable<DataBasePonuda>();
         IMobileServiceTable<DataBaseKorisnik> korisniciTabela = App.MobileService.GetTable<DataBaseKorisnik>();
-        //IMobileServiceTable<tabela> tabela = App.MobileService.GetTable<tabela>();
 
 
         public AdministratorViewModel()
@@ -126,6 +125,10 @@ namespace ProjekatOOAD.ViewModels
             }
             i = adminiX.Count();
             if (i > 0) Int32.TryParse(adminiX[i - 1].id, out Models.Administrator.ID);
+            else
+            {
+                dodajAdministratora();
+            }
             Models.Administrator.ID++;
             var korisniciX = await (from p in korisniciTabela select p).ToListAsync();
             foreach (DataBaseKorisnik x in korisniciX)
@@ -173,6 +176,8 @@ namespace ProjekatOOAD.ViewModels
                         logovaniAdministrator = a;
                         var frame = (Frame)Window.Current.Content;
                         frame.Navigate(typeof(Administrator), this);
+                        if (logovaniAdministrator.Obavjestenje == "") PrikaziPoruku("Nema obavjestenja!");
+                        else PrikaziPoruku("Obavjestenje: " + logovaniAdministrator.Obavjestenje);
                     }
                 }
             }
@@ -197,6 +202,44 @@ namespace ProjekatOOAD.ViewModels
         #endregion
         
         #region Dodavanje/Brisanje/Mijenjanje ponuda
+
+        async public void dodajAdministratora()
+
+        {
+            Models.Administrator asja = new Models.Administrator("asja", DateTime.Now, "", 0, "asja", "asja");
+            Models.Administrator sanida = new Models.Administrator("sanida", DateTime.Now, "", 0, "sanida", "sanida");
+            Models.Administrator esma = new Models.Administrator("esma", DateTime.Now, "", 0, "esma", "esma");
+            DataBaseAdministrator a1 = new DataBaseAdministrator(asja);
+            DataBaseAdministrator a2 = new DataBaseAdministrator(esma);
+            DataBaseAdministrator a3 = new DataBaseAdministrator(sanida);
+            try
+            {
+                await administratorTabela.InsertAsync(a1);
+
+            }
+            catch (Exception e)
+            {
+            }
+            try
+            {
+                await administratorTabela.InsertAsync(a2);
+
+            }
+            catch (Exception e)
+            {
+            }
+            try
+            {
+                await administratorTabela.InsertAsync(a3);
+
+            }
+            catch (Exception e)
+            {
+            }
+            agencija.Administratori.Add(asja);
+            agencija.Administratori.Add(sanida);
+            agencija.Administratori.Add(esma);
+        }
 
         async public void DodavanjePonude(Object o)
         {
@@ -233,13 +276,13 @@ namespace ProjekatOOAD.ViewModels
             }
             return true;
         }
-
+        bool azur = false;
         async void BrisanjePonude(Object o)
         {
             
             if (ponudaZaBrisanje != null)
             {
-                
+                OpisPutovanja x = new OpisPutovanja(ponudaZaBrisanje.Naziv, ponudaZaBrisanje.Slika, ponudaZaBrisanje.BrojDana, ponudaZaBrisanje.PlanPutovanja, ponudaZaBrisanje.Hotel, ponudaZaBrisanje.LiveCamera, ponudaZaBrisanje.VremenskaPrognoza, ponudaZaBrisanje.Znamenitosti, ponudaZaBrisanje.PutaOdrzano);
                 var ponudeX = await (from p in opisPutovanjaTabela where p.id == ponudaZaBrisanje.OpisPutovanjaID.ToString() select p).ToListAsync();
                 if (ponudeX.Count == 1)
                 {
@@ -247,9 +290,18 @@ namespace ProjekatOOAD.ViewModels
                     
 
                 }
-                PrikaziPoruku("Ponuda " + ponudaZaBrisanje.Naziv + " je obrisana!");
-                agencija.Ponude.Remove(ponudaZaBrisanje);
-                Administrator.o.Remove(ponudaZaBrisanje);
+                if (!azur)
+                {
+                    PrikaziPoruku("Ponuda " + x.Naziv + " je obrisana!");
+                    
+                }
+                else
+                {
+                    ponuda = x;
+                }
+                azur = true;
+                agencija.Ponude.Remove(x);
+                Administrator.o.Remove(x);
             }
             else
             {
@@ -289,6 +341,7 @@ namespace ProjekatOOAD.ViewModels
                 {
                     ponudaZaMijenjanje.Hotel = hotel1;
                 }
+                azur = true;
                 ponudaZaBrisanje = ponudaZaMijenjanje;
                 BrisanjePonude(o);
                 ponuda = ponudaZaMijenjanje;

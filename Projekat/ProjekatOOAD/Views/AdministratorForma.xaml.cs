@@ -35,6 +35,7 @@ namespace ProjekatOOAD
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            o = new ObservableCollection<OpisPutovanja>();
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)

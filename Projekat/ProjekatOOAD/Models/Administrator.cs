@@ -12,10 +12,12 @@ namespace ProjekatOOAD.Models
         private int adminID;
         private string korisnickoIme;
         private string lozinka;
+        private string obavjestenje;
 
         public int AdminID { get => adminID; }
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
         public string Lozinka { get => lozinka; set => lozinka = value; }
+        public string Obavjestenje { get => obavjestenje; set => obavjestenje = value; }
 
         public Administrator() { }
 
@@ -25,6 +27,7 @@ namespace ProjekatOOAD.Models
             adminID= ID++;
             this.KorisnickoIme = korisnickoIme;
             this.Lozinka = lozinka;
+            obavjestenje = "";
         }
 
         public Administrator(DataBaseAdministrator a)
@@ -36,6 +39,12 @@ namespace ProjekatOOAD.Models
             Int32.TryParse( a.id, out adminID);
             KorisnickoIme = a.korisnickoIme;
             Lozinka = a.lozinka;
+            obavjestenje = a.obavjestenje;
+        }
+
+        public void setObavjestenje(string o)
+        {
+            obavjestenje = o;
         }
     }
 }

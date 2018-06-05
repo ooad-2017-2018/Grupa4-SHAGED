@@ -15,6 +15,7 @@ namespace ProjekatOOAD.Models
         public long jmbg;
         public string korisnickoIme;
         public string lozinka;
+        public string obavjestenje;
         
 
         public DataBaseAdministrator() { }
