@@ -26,13 +26,13 @@
 <body>
     <div class="main">
         <div class="jumbotron" resource="">
-            <h1>Odaberite savrsenu destinaciju!</h1>
+            <h2>Odaberite vašu savršenu destinaciju!</h2>
         </div>
         <p>@Html.ValidationMessage("pokazi", new { @style = "color:red" })</p>
         @foreach (var item in Model)
         {
             <div class="col-md-4">
-                <img  src="@Html.Action("vratiSliku", "OpisPutovanja", new { id = item.opisPutovanjaID })" width="272" height="180" alt="Moskva" onclick="location.href='@Url.Action("Rezervacija","Ponude", new { id = item.Id })'" class="responsive">
+                <img  src="@Html.Action("vratiSliku", "OpisPutovanja", new { id = item.opisPutovanjaID })" width="272" height="180" alt="Moskva" onclick="location.href='@Url.Action("OpisPutovanja","Ponude", new { id = item.opisPutovanjaID })'" class="responsive">
                 <h3>@Html.Action("vratiIme", "OpisPutovanja", new { id = item.opisPutovanjaID })</h3>
 
                 <html>

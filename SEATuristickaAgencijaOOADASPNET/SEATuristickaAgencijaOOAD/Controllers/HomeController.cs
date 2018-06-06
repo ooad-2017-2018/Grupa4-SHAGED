@@ -54,5 +54,12 @@ namespace SEATuristickaAgencijaOOAD.Controllers
 
             return View();
         }
+
+        public ActionResult ONama()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }

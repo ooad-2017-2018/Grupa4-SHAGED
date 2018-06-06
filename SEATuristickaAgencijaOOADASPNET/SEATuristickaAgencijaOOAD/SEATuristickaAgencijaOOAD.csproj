@@ -225,15 +225,10 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\edinburgh.jpg" />
     <Content Include="Content\Images\kuba.jpg" />
     <Content Include="Content\Images\moskva.jpg" />
-    <Content Include="Content\Images\Mykonos.jpg" />
-    <Content Include="Content\Images\pariz.jpg" />
-    <Content Include="Content\Images\santorini.jpg" />
     <Content Include="Content\Images\sejseli.jpg" />
     <Content Include="Content\Images\svedska.jpg" />
-    <Content Include="Content\Images\tenerifi.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -267,7 +262,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Ponude.cshtml" />
     <Content Include="Views\Home\Anketa.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -292,6 +286,10 @@
     <Content Include="Views\Ponude\Index.cshtml" />
     <Content Include="Views\Ponude\Rezervacija.cshtml" />
     <Content Include="Views\Rezervacija\Index.cshtml" />
+    <Content Include="Views\Ponude\OpisPutovanja.cshtml" />
+    <Content Include="Views\OpisPutovanja\Rezervacija.cshtml" />
+    <Content Include="Views\Home\ONama.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,105 @@
+﻿@model SEATuristickaAgencijaOOAD.Models.OpisPutovanja
+@{
+    ViewBag.Title = "OpisPutovanja";
+}
+
+<h2>Detalji o odabranoj ponudi:</h2>
+<html>
+<head>
+    <style>
+        body {
+            background: url(https://cdn-images-1.medium.com/max/1200/1*N_l3sQECv4Yhght8HtwMGg.jpeg) no-repeat bottom fixed;
+            background-size: initial;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<br />
+<div class="row">
+    <div class="col-md-4">
+
+        <section id="picture">
+            <img src="@Html.Action("vratiSliku", "OpisPutovanja", new { id = Model.Id})" alt="Sample Image" width="400" height="500" />
+
+        </section>
+    </div>
+
+    <div class="col-md-6">
+
+        <section id="informations">
+
+
+            <div class="form-group">
+                @Html.LabelFor(m => Model.naziv, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => Model.naziv, new { @class = "form-control", @readonly = "readonly" })
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(m => Model.brojDana, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => Model.brojDana, new { @class = "form-control", @readonly = "readonly" })
+
+                </div>
+            </div>
+            <br />
+            <br />
+
+
+            <div class="form-group">
+                @Html.LabelFor(m => Model.putaOdrzano, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => Model.putaOdrzano, new { @class = "form-control", @readonly = "readonly" })
+
+                </div>
+            </div>
+            <br />
+            <br />
+
+
+
+
+
+        </section>
+
+    </div>
+
+
+
+    <section id="description">
+        <div class="col-md-6">
+
+            <div class="form-group">
+                @Html.LabelFor(m => Model.planPutovanja, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(m => Model.planPutovanja,  new { @class = "form-control", @cols = 80, @rows = 18,  @readonly = "readonly" } )
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</div>
+<br />
+<br />
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="form-group">
+            <div class="col-md-offset-5 col-md-8">
+                <input type="submit" value="Rezervisi" class="btn btn-primary" onclick="location.href='@Url.Action("Rezervacija", "OpisPutovanja")'" />
+            </div>
+        </div>
+        <br />
+        <br />
+
+

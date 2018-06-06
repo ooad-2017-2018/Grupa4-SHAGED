@@ -35,6 +35,13 @@ namespace SEATuristickaAgencijaOOAD.Controllers
 
             return View();
         }
+        public ActionResult OpisPutovanja(int id)
+        {
+            ViewBag.Message = "O agenciji";
+
+            OpisPutovanja Model = db.OpisPutovanja.Find(id);
+            return View(Model);
+        }
 
         /*
         public ActionResult Contact()

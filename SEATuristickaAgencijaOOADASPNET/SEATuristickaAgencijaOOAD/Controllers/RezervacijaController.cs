@@ -10,10 +10,11 @@ namespace SEATuristickaAgencijaOOAD.Controllers
     public class RezervacijaController : Controller
     {
         private SEAContext db = new SEAContext();
+        private static int samozarezervaciju=0;
         // GET: Rezervacija
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            return View();
+            return View(id);
         }
 
         public String rezervacija1(String putovanje1, String idKorisnika1)

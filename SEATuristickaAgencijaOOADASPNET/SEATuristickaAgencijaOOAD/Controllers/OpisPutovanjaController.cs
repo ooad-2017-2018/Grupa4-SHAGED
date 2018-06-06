@@ -18,6 +18,13 @@ namespace SEATuristickaAgencijaOOAD.Controllers
         {
             return View(db.OpisPutovanja.ToList());
         }
+
+        public ActionResult Rezervacija()
+        {   
+            //putovanje gdje je id putovanja 
+            return View();
+        }
+
         public ActionResult Details(string id)
         {
             if (id == null)
