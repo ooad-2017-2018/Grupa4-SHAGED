@@ -1,0 +1,79 @@
+﻿@model IEnumerable<SEATuristickaAgencijaOOAD.Models.Putovanje>
+@using Microsoft.AspNet.Identity
+@{
+                /**/
+
+                ViewBag.Title = "Ponude";
+}
+<html>
+<head>
+    <style>
+        #container {
+            background-color: green;
+            width: 100%;
+            height: 100px;
+        }
+
+        .ponuda {
+            background-color: red;
+            width: 33%;
+            height: 60px;
+            border: 1px solid #000;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="jumbotron" resource="">
+            <h1>Odaberite savrsenu destinaciju!</h1>
+        </div>
+        <p>@Html.ValidationMessage("pokazi", new { @style = "color:red" })</p>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <img  src="@Html.Action("vratiSliku", "OpisPutovanja", new { id = item.opisPutovanjaID })" width="272" height="180" alt="Moskva" onclick="location.href='@Url.Action("Rezervacija","Ponude", new { id = item.Id })'" class="responsive">
+                <h3>@Html.Action("vratiIme", "OpisPutovanja", new { id = item.opisPutovanjaID })</h3>
+
+                <html>
+<!--                <body>
+                    <p style="text-align:center"> ludo a Html.Action("vratiDatum", "Putovanje", new { datum = item.polazak, datum1 = item.povratak })</p>
+                </body>-->
+            </html>
+                <p>
+                    <head>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <style>
+                            .block {
+                                display: block;
+                                width: 100%;
+                                border: none;
+                                background-color: #4CAF50;
+                                color: white;
+                                padding: 14px 28px;
+                                font-size: 16px;
+                                cursor: pointer;
+                                text-align: center;
+                            }
+
+                                .block:hover {
+                                    background-color: #ddd;
+                                    color: black;
+                                }
+                        </style>
+                    </head>
+                    <body>
+                        @using Microsoft.AspNet.Identity
+                        @if (Request.IsAuthenticated)
+                        {
+                            <button class="block" onclick="location.href='@Url.Action("Rezervacija", "Ponude")'">Rezerviši</button>
+                        }
+                        
+                    </body>
+                </p>
+            <br> <br />
+        </div>
+    }
+</body>
+
+</html>
