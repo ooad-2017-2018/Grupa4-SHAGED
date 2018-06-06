@@ -97,6 +97,7 @@
     <Compile Include="Models\DataBaseKorisnik.cs" />
     <Compile Include="Models\DataBasePonuda.cs" />
     <Compile Include="Models\DataBasePutovanje.cs" />
+    <Compile Include="Models\Observer.cs" />
     <Compile Include="ViewModels\AdministratorViewModel.cs" />
     <Compile Include="Views\AdministratorForma.xaml.cs">
       <DependentUpon>AdministratorForma.xaml</DependentUpon>

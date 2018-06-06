@@ -39,10 +39,9 @@
                         <Setter Target="TbrojDana.Margin" Value="200, 414,0,0"/>
                         <Setter Target="dNazadDodaj.Margin" Value="30,465,0,0" />
                         <Setter Target="dDodaj.Margin" Value="310,465,0,0" />
-                        <Setter Target="dUcitajSliku.Margin" Value="200,114,0,0" />
-                        
-                        
-                        
+
+
+
                         <Setter Target="dNazadObrisi.Margin" Value="60,164,0,0" />
                         <Setter Target="dObrisi.Margin" Value="60,114,0,0" />
                         <Setter Target="comboPonudeObrisi.Margin" Value="200,14,0,0" />
@@ -70,7 +69,6 @@
                         <Setter Target="dAzuriraj.Width" Value="104"/>
                         <Setter Target="dNazadAzuriraj.Height" Value="38"/>
                         <Setter Target="dNazadAzuriraj.Width" Value="104"/>
-                        <Setter Target="dUcitajSlikuAzuriraj.Margin" Value="200,164,0,0" />
                         <Setter Target="comboPonudeAzuriraj.Margin" Value="88,14,0,0" />
                         <Setter Target="LodaberiPonuduAzuriraj.Margin" Value="16,17,0,0" />
 
@@ -115,7 +113,6 @@
                         <Setter Target="Tznamenitosti.Margin" Value="225,464,0,0" />
                         <Setter Target="dNazadDodaj.Margin" Value="500,444,0,0" />
                         <Setter Target="dDodaj.Margin" Value="500,384,0,0" />
-                        <Setter Target="dUcitajSliku.Margin" Value="500,120,0,0" />
                         <Setter Target="dNazadObrisi.Margin" Value="5,150,0,0" />
                         <Setter Target="dObrisi.Margin" Value="305,150,0,0" />
                         <Setter Target="comboPonudeObrisi.Margin" Value="225,33,0,0" />
@@ -139,7 +136,6 @@
                         <Setter Target="Tznamenitosti1.Margin" Value="225,469,0,0" />
                         <Setter Target="dNazadAzuriraj.Margin" Value="500,434,0,0" />
                         <Setter Target="dAzuriraj.Margin" Value="500,374,0,0" />
-                        <Setter Target="dUcitajSlikuAzuriraj.Margin" Value="500,120,0,0" />
 
                         <Setter Target="LcomboPonudePutovanja.Margin" Value="5,37,0,0" />
                         <Setter Target="comboPonudePutovanja.Margin" Value="255,34,0,0" />
@@ -169,12 +165,13 @@
                         <ImageBrush Stretch="Fill" ImageSource="Assets/zanzibar.jpg"/>
                     </Grid.Background>
                     <TextBlock Name="LimePonude" HorizontalAlignment="Left"  Text="Ime ponude:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                    <TextBlock Name="Lslika" HorizontalAlignment="Left"  Text="Slika:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBlock Name="Lslika" HorizontalAlignment="Left"  Text="Link slike:" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBox Name="TimePonude" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188"
                              Text="{Binding Path = naziv, Mode=TwoWay}"/>
                     <TextBox InputScope="Number" Name="TbrojDana" HorizontalAlignment="Left" PlaceholderText="Broj dana" VerticalAlignment="Top" Width="188"
                              Text="{Binding Path = brojDana, Mode=TwoWay}"/>
-                    <Image Name="slika"  HorizontalAlignment="Left" Height="113"  VerticalAlignment="Top" Width="187"/>
+                    <TextBox Name="slika"  HorizontalAlignment="Left" Height="63"  VerticalAlignment="Top" Width="187"
+                             Text="{Binding Path = slika, Mode=TwoWay}"/>
                     <TextBlock Name="LopisPonude" HorizontalAlignment="Left"  Text="Opis ponude:" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBox Name="TopisPonude" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Height="63" Margin="225,247,0,0"
                              Text="{Binding Path = planPutovanja, Mode=TwoWay}"/>
@@ -194,7 +191,6 @@
                             Command="{Binding Path = LogoutAdmin}"/>
                     <Button Name="dDodaj" Content="DODAJ PONUDU" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="42" Width="211"
                             Command="{Binding Path = dodajPonudu}"/>
-                    <Button Name="dUcitajSliku" Content="UCITAJ SLIKU" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="34" Width="120"/>
 
 
 
@@ -223,7 +219,8 @@
                     <TextBlock Name="Lslika1" HorizontalAlignment="Left" Text="Slika:" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBox Name="TimePonude1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" 
                              Text="{Binding Path = naziv1, Mode=TwoWay}"/>
-                    <Image Name="slika1" HorizontalAlignment="Left" Height="147"  VerticalAlignment="Top" Width="188"/>
+                    <TextBox Name="slika1" HorizontalAlignment="Left" Height="80"  VerticalAlignment="Top" Width="188"
+                             Text="{Binding Path = slika1, Mode=TwoWay}"/>
                     <TextBlock Name="Lopis1" HorizontalAlignment="Left" Text="Opis ponude:" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBox Name="Topis1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Height="80"
                              Text="{Binding Path = planPutovanja1, Mode=TwoWay}"/>
@@ -243,7 +240,6 @@
                             Command="{Binding Path = LogoutAdmin}"/>
                     <Button Name="dAzuriraj" Content="AZURIRAJ" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="42" Width="150"
                             Command="{Binding Path = izmijeniPonudu}"/>
-                    <Button Name="dUcitajSlikuAzuriraj" Content="UCITAJ SLIKU" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="34" Width="159"/>
 
 
 

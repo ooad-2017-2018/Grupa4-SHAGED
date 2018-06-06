@@ -13,6 +13,7 @@ namespace ProjekatOOAD.Models
         private string korisnickoIme;
         private string lozinka;
         private string obavjestenje;
+        private Observer o;
 
         public int AdminID { get => adminID; }
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
@@ -45,6 +46,21 @@ namespace ProjekatOOAD.Models
         public void setObavjestenje(string o)
         {
             obavjestenje = o;
+        }
+
+        public void Attach(Observer observer)
+        {
+            o=(observer);
+        }
+
+        public void Detach(Observer observer)
+        {
+            o=null;
+        }
+
+        public void Notify()
+        {
+            o.Update();
         }
     }
 }

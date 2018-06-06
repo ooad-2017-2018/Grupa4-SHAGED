@@ -54,6 +54,7 @@ namespace ProjekatOOAD.ViewModels
         public string vremenskaPrognoza { get; set; }
         public string znamenitosti { get; set; }
         public int putaOdrzano { get; set; }
+        public string slika { get; set; }
         #endregion
         public OpisPutovanja ponudaZaBrisanje { get; set; }
         public OpisPutovanja ponudaZaMijenjanje { get; set; }
@@ -66,6 +67,8 @@ namespace ProjekatOOAD.ViewModels
         public string vremenskaPrognoza1 { get; set; }
         public string znamenitosti1 { get; set; }
         public int putaOdrzano1 { get; set; }
+        public string slika1 { get; set; }
+
         #endregion
         public static bool prviPut = true;
         public static DateTime minZadnjePut { get; set; }
@@ -144,22 +147,22 @@ namespace ProjekatOOAD.ViewModels
         #region Login i Logout administratora
 
         #region Validacija username i lozinka
-        public bool mozeLiLogin()
+        public Models.Administrator mozeLiLogin()
         {
             int ad = agencija.Administratori.Count(x => x.ImeIprezime == AdminIme);
             if (ad == 0 || String.IsNullOrWhiteSpace(AdminIme))
             {
                 PrikaziPoruku("Korisnicko ime nije ispravno!");
-                return false;
+                return null;
             }
             Models.Administrator admini = agencija.Administratori.FirstOrDefault(x => x.ImeIprezime == AdminIme);
             if (admini.Lozinka != AdminSifra)
             {
                 PrikaziPoruku("Pogresna lozinka!");
-                return false;
+                return null;
             }
 
-            return true;
+            return admini;
         }
 
 
@@ -167,19 +170,15 @@ namespace ProjekatOOAD.ViewModels
 
         public void LoginAdministratora(Object o)
         {
-            if (mozeLiLogin())
+            Models.Administrator a = mozeLiLogin();
+            if (a!=null)
             {
-                foreach(Models.Administrator a in agencija.Administratori)
-                {
-                    if(a.KorisnickoIme == AdminIme && a.Lozinka== AdminSifra)
-                    {
-                        logovaniAdministrator = a;
-                        var frame = (Frame)Window.Current.Content;
-                        frame.Navigate(typeof(Administrator), this);
-                        if (logovaniAdministrator.Obavjestenje == "") PrikaziPoruku("Nema obavjestenja!");
-                        else PrikaziPoruku("Obavjestenje: " + logovaniAdministrator.Obavjestenje);
-                    }
-                }
+                logovaniAdministrator = a;
+                var frame = (Frame)Window.Current.Content;
+                frame.Navigate(typeof(Administrator), this);
+                a.Attach(new Observer(logovaniAdministrator));
+                a.Notify();
+              
             }
         }
 
@@ -245,7 +244,7 @@ namespace ProjekatOOAD.ViewModels
         {
             if (validirajDodavanje())
             {
-                ponuda = new OpisPutovanja(naziv, null, brojDana, planPutovanja, hotel, liveCamera, vremenskaPrognoza,znamenitosti, putaOdrzano);
+                ponuda = new OpisPutovanja(naziv, slika, brojDana, planPutovanja, hotel, liveCamera, vremenskaPrognoza,znamenitosti, putaOdrzano);
                 
                 DataBasePonuda dbPonuda = new DataBasePonuda(ponuda);
                 
@@ -328,6 +327,10 @@ namespace ProjekatOOAD.ViewModels
                 if (brojDana1>0 )
                 {
                     ponudaZaMijenjanje.BrojDana = brojDana1;
+                }
+                if (!String.IsNullOrWhiteSpace(slika1))
+                {
+                    ponudaZaMijenjanje.Slika = slika1;
                 }
                 if (!String.IsNullOrWhiteSpace(naziv1))
                 {
@@ -465,7 +468,7 @@ namespace ProjekatOOAD.ViewModels
             }
         }
 
-        async void PrikaziPoruku(string error)
+        public static async void PrikaziPoruku(string error)
         {
             await new MessageDialog(error).ShowAsync();
         }

@@ -13,7 +13,7 @@ namespace ProjekatOOAD.Models
         public static int ID=0;
         private int opisPutovanjaID;
         private string naziv;
-        private BitmapImage slika;
+        private string slika;
         private int brojDana;
         private string planPutovanja;
         private string hotel;
@@ -24,7 +24,7 @@ namespace ProjekatOOAD.Models
 
         public int OpisPutovanjaID { get => opisPutovanjaID;  }
         public string Naziv { get => naziv; set => naziv = value; }
-        public BitmapImage Slika { get => slika; set => slika = value; }
+        public string Slika { get => slika; set => slika = value; }
         public int BrojDana { get => brojDana; set => brojDana = value; }
         public string PlanPutovanja { get => planPutovanja; set => planPutovanja = value; }
         public string Hotel { get => hotel; set => hotel = value; }
@@ -35,7 +35,7 @@ namespace ProjekatOOAD.Models
 
         public OpisPutovanja() {  }
 
-        public OpisPutovanja(string naziv, BitmapImage slika, int brojDana, string planPutovanja, string hotel, string liveCamera, string vremenskaPrognoza, string znamenitosti, int putaOdrzano)
+        public OpisPutovanja(string naziv, string slika, int brojDana, string planPutovanja, string hotel, string liveCamera, string vremenskaPrognoza, string znamenitosti, int putaOdrzano)
         {
             opisPutovanjaID=ID++;
             this.Naziv = naziv;
