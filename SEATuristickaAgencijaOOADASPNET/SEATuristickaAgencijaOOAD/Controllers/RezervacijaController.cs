@@ -11,18 +11,24 @@ namespace SEATuristickaAgencijaOOAD.Controllers
     {
         private SEAContext db = new SEAContext();
         private static int samozarezervaciju=0;
+        string idKor = "1";
         // GET: Rezervacija
         public ActionResult Index(string id)
         {
             return View(id);
         }
 
+
         public String rezervacija1(String putovanje1, String idKorisnika1)
         {
-            idKorisnika1 = "1";
+            new BooksSearch();
+            var x = BooksSearch.Search("love");
+            
+
+            //trazi();
             int putovanje, idKorisnika;
             Int32.TryParse(putovanje1, out putovanje);
-            Int32.TryParse(idKorisnika1, out idKorisnika);
+            Int32.TryParse(idKor, out idKorisnika);
             var query1 = from a in db.Putovanje
                          where a.Id.Equals(putovanje)
                          select a;

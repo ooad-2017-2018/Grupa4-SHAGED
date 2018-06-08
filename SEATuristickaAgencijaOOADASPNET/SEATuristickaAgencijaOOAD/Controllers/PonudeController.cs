@@ -18,9 +18,13 @@ namespace SEATuristickaAgencijaOOAD.Controllers
             error = "ok";
             var model = new List<Putovanje>();
             model = db.Putovanje.ToList();
+            
+
             return View(model);
+            
         }
 
+        
 
         public ActionResult Rezervacija(string id)
         {
