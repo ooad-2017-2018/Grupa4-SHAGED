@@ -21,13 +21,18 @@ namespace SEATuristickaAgencijaOOAD.Models
                 ApplicationName = this.GetType().ToString()
             });
         }
-        public static Tuple<int?, List<Knjiga>> Search(string query)
+        public static List<Knjiga>Search(string query)
         {
             var listquery = _booksService.Volumes.List(query);
             listquery.MaxResults = 10;
             var res = listquery.Execute();
-            var books = res.Items.Select(b => new Knjiga(b.VolumeInfo.Title, b.VolumeInfo.Categories.ToString())).ToList();
-            return new Tuple<int?, List<Knjiga>>(res.TotalItems, books);
+            List<Knjiga> books = new List<Knjiga>();
+            foreach( var b in res.Items)
+            {
+                books.Add(new Knjiga(b.VolumeInfo.Title, null));
+            }
+            //var books = res.Items.Select(b => new Knjiga(b.VolumeInfo.Title, b.VolumeInfo.Categories.ToString())).ToList();
+            return books;
         }
         /*
          * BooksSearch a = new BooksSearch();

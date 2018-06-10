@@ -224,6 +224,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KorisnikController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NaseKnjigeController.cs" />
     <Compile Include="Controllers\OpisPutovanjaController.cs" />
     <Compile Include="Controllers\PonudeController.cs" />
     <Compile Include="Controllers\PutovanjeController.cs" />
@@ -324,10 +325,12 @@
     <Content Include="Views\OpisPutovanja\Rezervacija.cshtml" />
     <Content Include="Views\Home\ONama.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\NaseKnjige.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Korisnik\" />
+    <Folder Include="Views\NaseKnjige\" />
     <Folder Include="Views\Putovanje\" />
   </ItemGroup>
   <ItemGroup>
@@ -365,7 +368,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63865</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

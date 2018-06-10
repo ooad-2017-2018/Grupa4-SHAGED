@@ -35,11 +35,6 @@
                 <img  src="@Html.Action("vratiSliku", "OpisPutovanja", new { id = item.opisPutovanjaID })" width="272" height="180" alt="Moskva" onclick="location.href='@Url.Action("OpisPutovanja","Ponude", new { id = item.opisPutovanjaID })'" class="responsive">
                 <h3>@Html.Action("vratiIme", "OpisPutovanja", new { id = item.opisPutovanjaID })</h3>
 
-                <html>
-<!--                <body>
-                    <p style="text-align:center"> ludo a Html.Action("vratiDatum", "Putovanje", new { datum = item.polazak, datum1 = item.povratak })</p>
-                </body>-->
-            </html>
                 <p>
                     <head>
                         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,14 +57,7 @@
                                 }
                         </style>
                     </head>
-                    <body>
-                        @using Microsoft.AspNet.Identity
-                        @if (Request.IsAuthenticated)
-                        {
-                            <button class="block" onclick="location.href='@Url.Action("Rezervacija", "Ponude")'">Rezerviši</button>
-                        }
-                        
-                    </body>
+            
                 </p>
             <br> <br />
         </div>

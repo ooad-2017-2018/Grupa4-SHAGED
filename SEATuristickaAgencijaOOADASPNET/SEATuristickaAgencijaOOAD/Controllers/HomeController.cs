@@ -61,5 +61,16 @@ namespace SEATuristickaAgencijaOOAD.Controllers
 
             return View();
         }
+
+        public ActionResult NaseKnjige()
+        {
+            BooksSearch b = new BooksSearch();
+            List<Knjiga> knjige = BooksSearch.Search("Trevel guide");
+        
+           //knjige = new Knjiga[x.Item2.Count()];
+
+          
+            return View(knjige);
+        }
     }
 }

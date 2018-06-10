@@ -20,18 +20,7 @@ namespace WebAPIControllers
 
         public IEnumerable<Knjiga> GetAllKnjigas()
         {
-            /*
-            new BooksSearch();
-            var x = BooksSearch.Search("Tourism");
-            knjigas = new Knjiga[x.Item2.Count()];
-            for(int i=0; i<x.Item2.Count(); i++)
-            {
-                Knjiga k = new Knjiga();
-                k.Id = i;
-                k.Name = x.Item2[i].Naziv;
-                k.Genre = x.Item2[i].ImeAutora;
-                knjigas[i] = k;
-            }*/
+           
             return knjigas;
         }
 
