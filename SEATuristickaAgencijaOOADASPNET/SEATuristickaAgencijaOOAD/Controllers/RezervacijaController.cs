@@ -21,9 +21,10 @@ namespace SEATuristickaAgencijaOOAD.Controllers
 
         public String rezervacija1(String putovanje1, String idKorisnika1)
         {
+            /*
             new BooksSearch();
             var x = BooksSearch.Search("love");
-            
+            */
 
             //trazi();
             int putovanje, idKorisnika;

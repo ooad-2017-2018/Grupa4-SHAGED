@@ -26,8 +26,12 @@ namespace SEATuristickaAgencijaOOAD.Models
             var listquery = _booksService.Volumes.List(query);
             listquery.MaxResults = 10;
             var res = listquery.Execute();
-            var books = res.Items.Select(b => new Knjiga(b.VolumeInfo.Title, b.VolumeInfo.Description)).ToList();
+            var books = res.Items.Select(b => new Knjiga(b.VolumeInfo.Title, b.VolumeInfo.Categories.ToString())).ToList();
             return new Tuple<int?, List<Knjiga>>(res.TotalItems, books);
         }
+        /*
+         * BooksSearch a = new BooksSearch();
+         *var x = BooksSearch.Search("tourism");
+         * x.Item2*/
     }
 }

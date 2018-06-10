@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEATuristickaAgencijaOOAD", "SEATuristickaAgencijaOOAD\SEATuristickaAgencijaOOAD.csproj", "{9757F33C-AD31-4EF9-91CB-8626F8160F57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIBooks", "WebAPIBooks\WebAPIBooks.csproj", "{DC116C79-8F69-4918-B8EE-9D00A3FBD6AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9757F33C-AD31-4EF9-91CB-8626F8160F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9757F33C-AD31-4EF9-91CB-8626F8160F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9757F33C-AD31-4EF9-91CB-8626F8160F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC116C79-8F69-4918-B8EE-9D00A3FBD6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC116C79-8F69-4918-B8EE-9D00A3FBD6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC116C79-8F69-4918-B8EE-9D00A3FBD6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC116C79-8F69-4918-B8EE-9D00A3FBD6AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
